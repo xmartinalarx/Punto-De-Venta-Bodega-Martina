@@ -1,0 +1,526 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+body {
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+:root{
+    --main-color: #fd4646;
+    --sec-color: #4946fd;
+    --text-color: #171427;
+    --bg-color: #fff;
+}
+::selection{
+    color: var(--text-color);
+    background-color: var(--main-color);
+}
+/* Estilos para el menú lateral (aside) */
+/* Estilos para la barra lateral */
+.sidebar {
+    z-index: 100;
+    width: 200px;
+    height: 100%;
+    background-color:#0576ab;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease;
+    overflow-y: auto; /* Agregar desplazamiento vertical */
+}
+
+.sidebar.minimized {
+    width: 60px;
+}
+.arriva{
+
+    width: 120%;
+    height: 80px;
+    background-color:#05acfa;
+    position: relative;
+    left: -20%;
+    top: -90px;
+    text-align: center center;
+}
+
+/* Estilos para el contenido principal */
+#main {
+    margin-left: 200px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    width: 90%;
+    position: relative;
+    left: 20%;
+}
+
+#main.minimized {
+    margin-left: 60px;
+}
+.cont{
+    width: 100%;
+    position: absolute;
+    top: 70px;
+}
+/* Estilos para el botón de minimizar */
+.toggle-sidebar-btn {
+    position: fixed;
+    bottom: 10px; /* Distancia desde la parte inferior de la página */
+    left: 10px; /* Distancia desde la parte izquierda de la página */
+    background-color: #d40f0f;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1300; /* Asegura que el botón esté por encima del contenido */
+}
+.toggle-sidebar-btn:hover{
+    position: fixed;
+    bottom: 10px; /* Distancia desde la parte inferior de la página */
+    left: 10px; /* Distancia desde la parte izquierda de la página */
+    background-color: #893636;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1300; /* Asegura que el botón esté por encima del contenido */
+}
+
+.sidebar.hidden {
+    display: none;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+}
+
+
+/* Estilos específicos para los formularios de agregar y eliminar productos */
+#addProductForm,
+#deleteProductForm,
+#editProductForm {
+    display: none;
+}
+
+/* Estilos para los botones de agregar y eliminar producto */
+.botones-acciones button {
+    padding: 10px 20px; /* Padding uniforme */
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el mouse */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+/* Estilo específico para el botón de eliminar */
+.botones-acciones .btn-eliminar-producto {
+    background-color: #ff0000; /* Color de fondo rojo */
+}
+
+/* Estilo específico para el botón de editar */
+.botones-acciones .btn-editar-producto {
+    background-color: #007bff; /* Color de fondo azul */
+}
+/* Estilos para los formularios de agregar, eliminar y editar productos */
+
+/* Estilos generales para las etiquetas de los formularios */
+label {
+    color: #007bff; /* Color azul para las etiquetas */
+}
+
+/* Estilos generales para los elementos de los formularios */
+input[type="text"],
+input[type="number"],
+select {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ajustar el tamaño total del elemento incluyendo padding y border */
+}
+
+/* Estilos para los placeholders de los elementos de los formularios */
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+select::placeholder {
+    color: #999; /* Color gris para los placeholders */
+}
+
+/* Estilos para los botones de los formularios */
+button[type="button"] {
+    width: 90%;
+    padding: 10px;
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer;
+}
+
+/* Estilos para los botones de los formularios al pasar el mouse */
+button[type="button"]:hover {
+    background-color: #0056b3; /* Color de fondo azul más oscuro al pasar el mouse */
+}
+.image-upload {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #3498db; /* Cambiar el color del borde según sea necesario */
+    border-radius: 4px;
+    padding: 8px 12px;
+    background-color: #3498db; /* Cambiar el color de fondo según sea necesario */
+    color: #fff; /* Cambiar el color del texto según sea necesario */
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.image-upload:hover {
+    background-color: #2980b9; /* Cambiar el color de fondo al pasar el mouse */
+}
+
+.image-upload input[type="file"] {
+    position: absolute;
+    font-size: 100px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.image-upload span {
+    font-weight: bold;
+}
+/* imagenes de bodega */
+/* Estilos generales para los productos */
+/* Estilos generales para los productos */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.product {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    background-color: #ff000061;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-around;
+    align-items: center;
+    } 
+
+.product h3 {
+    margin-top: 0;
+}
+
+.product img {
+    width: 30%;
+    height: 100%;
+    border-radius: 4px;
+
+}
+/* slider bodega */
+.bodega-slider {
+    display: flex;
+
+}
+
+.sliders {
+    flex: 0 0 auto;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.bodega-slider h2 {
+    text-align: center;
+}
+.slide-button{
+    background-color: rgb(19, 154, 55);
+    border-radius: 10%;
+}
+
+
+/* Estilos para dispositivos con un ancho máximo de 768px (tabletas y dispositivos móviles) */
+@media screen and (max-width: 768px) {
+
+    .product {
+        /* width: 90%; */
+        height: 10%;
+        display: flex;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-content: stretch;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .product img {
+        width: 100%;
+        height: 200px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
+
+}
+@media screen and (min-width: 768px) {
+
+    .slide {
+
+        width: 70%;
+        position: relative;
+        left: 7%;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+
+}
+
+/* Estilos para dispositivos con un ancho máximo de 480px (dispositivos móviles) */
+@media screen and (max-width: 480px) {
+    .product {
+        width: calc(80% - 20px); /* Dos productos por fila */
+    }
+}
+
+  /* loader */
+  /* Estilos para el loader */
+.loader {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+    z-index: 9999;
+    display: none; /* Ocultar el loader por defecto */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* Estilos generales para las ventas */
+.ventas-local {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el título de las ventas */
+.ventas-local h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Estilos para cada venta */
+.venta {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+/* Estilos para la tabla de ventas */
+.ventas-table-container {
+    width: 100%;
+    overflow-x: auto; /* Agrega una barra de desplazamiento horizontal si es necesario */
+}
+
+.ventas-table {
+    width: auto; /* Hace que la tabla sea lo suficientemente ancha para contener su contenido */
+    border-collapse: collapse;
+}
+
+/* Estilos para las celdas de la tabla */
+.ventas-table th,
+.ventas-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Estilos para la imagen del producto en la tabla */
+.ventas-table img {
+    max-width: 50px;
+    max-height: 50px;
+}
+/* slider local1 */
+.slide2 {
+    width: 70%;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+/* Estilos para los slides */
+.slide {
+    width: 70%;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Estilos para los botones */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilos para la tabla de totales de ventas */
+#tablaTotales {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tablaTotales th, #tablaTotales td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+#tablaTotales th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#tablaTotales tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#tablaTotales tr{
+    background-color: #f2f2f2;
+    
+}
+
+#tablaTotales tr:last-child td {
+    font-weight: bold;
+    color: #007bff;
+}
+/* loader */
+.centrado{
+    position: fixed;
+    z-index: 2900;
+    background-color: #007bff;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* logo martina */
+.logo{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--sec-color);
+    text-transform: uppercase;
+}
+.logo span{
+    color: var(--main-color);
+    font-weight: 700;
+}
+/* 2 */
+.logo2 {
+    font-size: 3.1rem; /* Tamaño base para pantallas grandes */
+    font-weight: 600;
+    color: var(--sec-color);
+    text-transform: uppercase;
+}
+
+.logo2 span {
+    color: var(--main-color);
+    font-weight: 700;
+}
+.logo3 {
+    background-color: #fff;
+    padding: 10px;
+    position: absolute;
+    left: 59%;
+    font-size: 1.5rem; /* Tamaño base para pantallas grandes */
+    font-weight: 600;
+    color: var(--sec-color);
+    text-transform: uppercase;
+}
+
+.logo3 span {
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .logo2 {
+        font-size: 2.5rem; /* Reducir el tamaño de la fuente para pantallas medianas */
+    }
+    .logo3 {
+        background-color: #fff;
+        left: 55%;
+
+    }
+}
+
+/* Ajustes para pantallas aún más pequeñas */
+@media screen and (max-width: 576px) {
+    .logo2 {
+        font-size: 1.5rem; /* Reducir aún más el tamaño de la fuente para pantallas pequeñas */
+    }
+    .logo3 {
+        background-color: #fff;
+        position: absolute;
+        left: 35%;
+    }
+}
